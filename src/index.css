@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Barlow:wght@300;400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500&family=Barlow:wght@300;400;500;600&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,6 +6,8 @@
 
 @layer base {
   :root {
+    --font-display: 'Instrument Serif', serif;
+    --font-body: 'Inter', sans-serif;
     --background: 213 45% 67%;
     --foreground: 0 0% 100%;
     --card: 213 45% 62%;
@@ -46,7 +48,7 @@
     overflow-x: hidden;
     background: #000;
     color: hsl(var(--foreground));
-    font-family: 'Barlow', sans-serif;
+    font-family: var(--font-body), 'Barlow', sans-serif;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -56,6 +58,18 @@
   button,
   a {
     -webkit-tap-highlight-color: transparent;
+  }
+}
+
+@keyframes fade-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -136,5 +150,19 @@
 
   .section-heading {
     @apply text-4xl md:text-5xl lg:text-6xl font-heading italic text-white tracking-tight leading-[0.9];
+  }
+}
+
+@layer utilities {
+  .animate-fade-rise {
+    animation: fade-rise 0.8s ease-out both;
+  }
+
+  .animate-fade-rise-delay {
+    animation: fade-rise 0.8s ease-out 0.2s both;
+  }
+
+  .animate-fade-rise-delay-2 {
+    animation: fade-rise 0.8s ease-out 0.4s both;
   }
 }

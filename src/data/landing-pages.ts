@@ -32,4 +32,15 @@ export const landingPages: LandingPageMeta[] = [
       'A dark space NFT landing page with liquid glass surfaces, cinematic video backdrops, and bold editorial typography.',
     tags: ['React', 'Vite', 'Tailwind', 'Lucide'],
   },
+  {
+    slug: 'velorah-hero',
+    title: 'Velorah Hero',
+    category: 'Landing Page',
+    year: '2026',
+    outcome: 'Minimal cinematic hero',
+    image: '/images/velorah_hero_cover.jpg',
+    summary:
+      'A fullscreen cinematic hero with glass navigation, restrained typography, and a pure video-led visual language.',
+    tags: ['React', 'Vite', 'Tailwind', 'shadcn/ui'],
+  },
 ]
