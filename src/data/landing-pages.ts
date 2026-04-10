@@ -21,4 +21,15 @@ export const landingPages: LandingPageMeta[] = [
       'A dark premium agency page with video backgrounds, liquid glass UI, motion reveals, and full conversion sections.',
     tags: ['React', 'Vite', 'Tailwind', 'Motion'],
   },
+  {
+    slug: 'orbis-nft',
+    title: 'Orbis.Nft',
+    category: 'Landing Page',
+    year: '2026',
+    outcome: 'Space-themed NFT experience',
+    image: '/images/orbis_nft_cover.jpg',
+    summary:
+      'A dark space NFT landing page with liquid glass surfaces, cinematic video backdrops, and bold editorial typography.',
+    tags: ['React', 'Vite', 'Tailwind', 'Lucide'],
+  },
 ]

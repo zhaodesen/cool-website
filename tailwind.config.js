@@ -9,8 +9,12 @@ export default {
       fontFamily: {
         heading: ["'Instrument Serif'", 'serif'],
         body: ["'Barlow'", 'sans-serif'],
+        grotesk: ["'Anton'", 'sans-serif'],
+        condiment: ["'Condiment'", 'cursive'],
       },
       colors: {
+        cream: '#EFF4FF',
+        neon: '#6FFF00',
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
         ring: 'hsl(var(--ring))',
