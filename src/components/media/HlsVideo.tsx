@@ -1,5 +1,4 @@
 import { useEffect, useRef, type ComponentPropsWithoutRef } from 'react'
-import Hls from 'hls.js'
 
 type HlsVideoProps = Omit<ComponentPropsWithoutRef<'video'>, 'src'> & {
   src: string
@@ -14,7 +13,8 @@ export function HlsVideo({ src, ...props }: HlsVideoProps) {
       return undefined
     }
 
-    let hls: Hls | null = null
+    let disposed = false
+    let hls: { destroy: () => void } | null = null
     const tryPlay = () => {
       video.play().catch(() => undefined)
     }
@@ -22,17 +22,37 @@ export function HlsVideo({ src, ...props }: HlsVideoProps) {
     if (video.canPlayType('application/vnd.apple.mpegurl')) {
       video.src = src
       video.addEventListener('canplay', tryPlay)
-    } else if (Hls.isSupported()) {
-      hls = new Hls()
-      hls.loadSource(src)
-      hls.attachMedia(video)
-      hls.on(Hls.Events.MANIFEST_PARSED, tryPlay)
     } else {
-      video.src = src
-      video.addEventListener('canplay', tryPlay)
+      import('hls.js')
+        .then(({ default: Hls }) => {
+          if (disposed) {
+            return
+          }
+
+          if (Hls.isSupported()) {
+            const instance = new Hls()
+            instance.loadSource(src)
+            instance.attachMedia(video)
+            instance.on(Hls.Events.MANIFEST_PARSED, tryPlay)
+            hls = instance
+            return
+          }
+
+          video.src = src
+          video.addEventListener('canplay', tryPlay)
+        })
+        .catch(() => {
+          if (disposed) {
+            return
+          }
+
+          video.src = src
+          video.addEventListener('canplay', tryPlay)
+        })
     }
 
     return () => {
+      disposed = true
       video.removeEventListener('canplay', tryPlay)
       hls?.destroy()
       video.removeAttribute('src')

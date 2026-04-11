@@ -9,8 +9,10 @@ import {
 import { motion } from 'motion/react'
 import { Link } from 'react-router-dom'
 
-import feature1Gif from '@/assets/feature-1.gif'
-import feature2Gif from '@/assets/feature-2.gif'
+import feature1Mp4 from '@/assets/feature-1.mp4'
+import feature1Webm from '@/assets/feature-1.webm'
+import feature2Mp4 from '@/assets/feature-2.mp4'
+import feature2Webm from '@/assets/feature-2.webm'
 import logoIcon from '@/assets/logo-icon.png'
 import { BlurText } from '@/components/motion/BlurText'
 import { HlsVideo } from '@/components/media/HlsVideo'
@@ -42,7 +44,7 @@ const featureRows = [
     description:
       '每一个像素都经过推敲。我们的 AI 会分析海量顶级网站，再为你构建更高表现的版本。',
     cta: '了解更多',
-    image: feature1Gif,
+    video: { webm: feature1Webm, mp4: feature1Mp4 },
     reverse: false,
   },
   {
@@ -50,7 +52,7 @@ const featureRows = [
     description:
       '你的网站会自行进化。AI 监测每次点击、滚动与转化，并实时优化。无需手动更新。',
     cta: '查看原理',
-    image: feature2Gif,
+    video: { webm: feature2Webm, mp4: feature2Mp4 },
     reverse: true,
   },
 ] as const
@@ -316,11 +318,16 @@ function FeaturesChess() {
               </div>
 
               <div className="liquid-glass overflow-hidden rounded-2xl">
-                <img
-                  alt={feature.title}
+                <video
+                  autoPlay
                   className="aspect-[16/10] w-full object-cover"
-                  src={feature.image}
-                />
+                  loop
+                  muted
+                  playsInline
+                >
+                  <source src={feature.video.webm} type="video/webm" />
+                  <source src={feature.video.mp4} type="video/mp4" />
+                </video>
               </div>
             </motion.article>
           ))}
