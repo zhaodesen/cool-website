@@ -22,10 +22,10 @@ const nftVideos = [
   },
 ] as const
 
-const navLinks = ['Homepage', 'Gallery', 'Buy NFT', 'FAQ', 'Contact'] as const
+const navLinks = ['首页', '画廊', '购买 NFT', '常见问题', '联系'] as const
 
 const aboutText =
-  'A digital object fixed beyond time and place. An exploration of distance, form, and silence in space'
+  '一个超越时间与地点的数字对象，对距离、形态与太空静默的持续探索。'
 
 function SocialButtons({ className }: { className?: string }) {
   const items = [Mail, Twitter, Github] as const
@@ -103,10 +103,10 @@ function HeroSection() {
 
           <div className="relative mt-auto pb-10 sm:pb-14 lg:pb-20">
             <h1 className="relative max-w-[780px] font-grotesk uppercase text-cream text-[40px] sm:text-[60px] md:text-[75px] lg:text-[90px] leading-[1.05] md:leading-[1] lg:ml-32">
-              <span className="block">Beyond earth</span>
-              <span className="block">and ( its ) familiar boundaries</span>
+              <span className="block">超越地球</span>
+              <span className="block">以及（它）熟悉的边界之外</span>
               <span className="pointer-events-none absolute right-[-5%] top-[12%] rotate-[-1deg] font-condiment normal-case text-neon opacity-90 mix-blend-exclusion text-[24px] sm:text-[32px] md:text-[40px] lg:text-[48px]">
-                Nft collection
+                NFT 合集
               </span>
             </h1>
 
@@ -137,8 +137,8 @@ function AboutSection() {
           <div className="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
             <div className="relative w-fit">
               <h2 className="font-grotesk text-cream leading-[1] text-[32px] sm:text-[42px] md:text-[52px] lg:text-[60px]">
-                <span className="block">Hello!</span>
-                <span className="block">I&apos;m orbis</span>
+                <span className="block">你好！</span>
+                <span className="block">我是 orbis</span>
               </h2>
               <span className="pointer-events-none absolute -bottom-3 right-0 rotate-[-2deg] font-condiment normal-case text-neon opacity-90 mix-blend-exclusion text-[36px] sm:text-[50px] md:text-[58px] lg:text-[68px]">
                 Orbis
@@ -181,21 +181,21 @@ function CollectionSection() {
       <div className="mx-auto max-w-[1831px] px-2 sm:px-4 md:px-6 lg:px-8">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
           <h2 className="font-grotesk text-cream leading-[1] text-[32px] sm:text-[42px] md:text-[52px] lg:text-[60px]">
-            <span className="block">Collection of</span>
+            <span className="block">收藏系列</span>
             <span className="block ml-12 sm:ml-24 md:ml-32">
-              <span className="font-condiment normal-case text-neon">Space</span>{' '}
-              <span>objects</span>
+              <span className="font-condiment normal-case text-neon">太空</span>{' '}
+              <span>物件</span>
             </span>
           </h2>
 
           <button className="group inline-flex flex-col items-start" type="button">
             <span className="inline-flex items-end gap-3">
               <span className="font-grotesk text-cream leading-none text-[32px] sm:text-[42px] md:text-[52px] lg:text-[60px]">
-                SEE
+                查看
               </span>
               <span className="mb-1 flex flex-col font-grotesk leading-[0.92] text-cream text-[20px] sm:text-[26px] md:text-[32px] lg:text-[36px]">
-                <span>ALL</span>
-                <span>CREATORS</span>
+                <span>全部</span>
+                <span>创作者</span>
               </span>
             </span>
             <span className="mt-3 h-[6px] w-full bg-neon transition group-hover:opacity-90 sm:h-[8px] lg:h-[10px]" />
@@ -222,7 +222,7 @@ function CollectionSection() {
                 <div className="liquid-glass absolute bottom-3 left-3 right-3 flex items-center justify-between rounded-[20px] px-5 py-4">
                   <div>
                     <p className="font-grotesk text-[11px] tracking-[0.08em] text-cream/70">
-                      RARITY SCORE:
+                      稀有度评分：
                     </p>
                     <p className="mt-1 font-grotesk text-[16px] text-cream">
                       {item.score}
@@ -270,13 +270,13 @@ function FinalSection() {
           <div className="absolute right-0 top-[14%] w-full text-right lg:pr-[20%] lg:pl-[15%]">
             <div className="relative inline-block">
               <span className="pointer-events-none absolute left-0 top-[-18%] rotate-[-2deg] font-condiment normal-case text-neon opacity-90 mix-blend-exclusion text-[17px] sm:text-[28px] md:text-[44px] lg:text-[68px]">
-                Go beyond
+                去往更远处
               </span>
               <h2 className="font-grotesk text-cream leading-[1.02] text-[16px] sm:text-[24px] md:text-[40px] lg:text-[60px]">
-                <span className="block mb-4 sm:mb-8 md:mb-10 lg:mb-12">JOIN US.</span>
-                <span className="block">REVEAL WHAT&apos;S HIDDEN.</span>
-                <span className="block">DEFINE WHAT&apos;S NEXT.</span>
-                <span className="block">FOLLOW THE SIGNAL.</span>
+                <span className="block mb-4 sm:mb-8 md:mb-10 lg:mb-12">加入我们。</span>
+                <span className="block">揭示隐藏之物。</span>
+                <span className="block">定义下一步。</span>
+                <span className="block">跟随信号前行。</span>
               </h2>
             </div>
           </div>

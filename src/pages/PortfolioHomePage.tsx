@@ -12,12 +12,18 @@ import { ctaVideo, heroVideo } from '@/data/media'
 import { reveal, smoothEase } from '@/lib/motion'
 
 function PortfolioNav() {
+  const navItems = [
+    { label: '首页', href: '#intro' },
+    { label: '页面', href: '#pages' },
+    { label: '联系', href: '#contact' },
+  ] as const
+
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-8 py-3 lg:px-16">
       <nav className="mx-auto flex max-w-7xl items-center justify-between">
-        <Link aria-label="Back to portfolio home" className="block" to="/">
+        <Link aria-label="返回作品集首页" className="block" to="/">
           <img
-            alt="Portfolio"
+            alt="作品集"
             className="h-12 w-12 object-contain"
             height={48}
             src={logoIcon}
@@ -26,13 +32,13 @@ function PortfolioNav() {
         </Link>
 
         <div className="liquid-glass hidden items-center rounded-full px-1.5 py-1 md:flex">
-          {['Intro', 'Pages', 'Contact'].map((item) => (
+          {navItems.map((item) => (
             <a
               className="rounded-full px-3 py-2 font-body text-sm font-medium text-foreground/75 transition hover:text-white"
-              href={`#${item.toLowerCase()}`}
-              key={item}
+              href={item.href}
+              key={item.label}
             >
-              {item}
+              {item.label}
             </a>
           ))}
           <Button
@@ -40,7 +46,7 @@ function PortfolioNav() {
             className="ml-1 rounded-full bg-white px-3.5 py-1.5 text-sm text-black hover:bg-white/90"
           >
             <a href="#pages">
-              View Work
+              查看作品
               <ArrowUpRight className="size-4" />
             </a>
           </Button>
@@ -56,7 +62,7 @@ function MobilePagesLink() {
       className="fixed bottom-5 left-1/2 z-50 -translate-x-1/2 rounded-full bg-white px-5 py-2.5 font-body text-sm font-medium text-black shadow-2xl md:hidden"
       href="#pages"
     >
-      View Pages
+      查看页面
     </a>
   )
 }
@@ -87,13 +93,13 @@ export function PortfolioHomePage() {
 
         <div className="relative z-10 mx-auto flex min-h-[720px] max-w-7xl flex-col">
           <motion.div {...reveal} className="max-w-4xl">
-            <span className="section-badge">Portfolio</span>
+            <span className="section-badge">作品集</span>
             <h1 className="mt-6 max-w-5xl font-heading text-6xl italic leading-[0.82] tracking-[-3px] text-white md:text-7xl lg:text-[6.5rem]">
-              I build landing pages with atmosphere, clarity, and motion.
+              我打造有氛围、有节奏、可落地的落地页体验。
             </h1>
             <p className="mt-7 max-w-2xl font-body text-sm font-light leading-relaxed text-white/65 md:text-base">
               我是 Zhaodesen，专注把产品想法做成可展示、可交互、能被记住的网页体验。下面是我的
-              landing page 作品列表。
+              落地页作品列表。
             </p>
             <div className="mt-9 flex flex-col gap-4 sm:flex-row">
               <Button
@@ -102,7 +108,7 @@ export function PortfolioHomePage() {
                 variant="glass"
               >
                 <a href="#pages">
-                  View Landing Pages
+                  浏览落地页
                   <ArrowUpRight className="size-4" />
                 </a>
               </Button>
@@ -110,7 +116,7 @@ export function PortfolioHomePage() {
                 asChild
                 className="rounded-full bg-white px-6 py-3 text-black hover:bg-white/90"
               >
-                <a href="#contact">Contact Me</a>
+                <a href="#contact">联系我</a>
               </Button>
             </div>
           </motion.div>
@@ -122,9 +128,9 @@ export function PortfolioHomePage() {
             transition={{ delay: 0.45, duration: 0.7, ease: smoothEase }}
           >
             {[
-              ['01', 'Live showcase'],
-              ['React', 'Frontend stack'],
-              ['Motion', 'Interaction style'],
+              ['01', '在线展示'],
+              ['React', '前端技术栈'],
+              ['Motion', '动效语言'],
             ].map(([value, label]) => (
               <div className="liquid-glass rounded-2xl p-5" key={label}>
                 <p className="font-heading text-4xl italic text-white">
@@ -142,7 +148,7 @@ export function PortfolioHomePage() {
       <section className="bg-black px-6 py-24" id="pages">
         <div className="mx-auto max-w-7xl">
           <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
-            <SectionIntro badge="Landing Pages" title="Selected pages." />
+            <SectionIntro badge="落地页" title="精选页面" />
             <motion.p
               {...reveal}
               className="max-w-md font-body text-sm font-light leading-relaxed text-white/55 md:text-right"
@@ -165,7 +171,7 @@ export function PortfolioHomePage() {
                 >
                   <div className="overflow-hidden rounded-2xl">
                     <img
-                      alt={`${page.title} preview`}
+                      alt={`${page.title} 预览`}
                       className="aspect-[16/10] w-full object-cover transition duration-700 group-hover:scale-[1.03]"
                       src={page.image}
                     />
@@ -228,12 +234,12 @@ export function PortfolioHomePage() {
           {...reveal}
           className="relative z-10 mx-auto max-w-3xl text-center"
         >
-          <span className="section-badge">Contact</span>
+          <span className="section-badge">联系</span>
           <h2 className="mt-5 font-heading text-5xl italic leading-[0.85] tracking-tight text-white md:text-6xl lg:text-7xl">
-            More pages are coming next.
+            更多页面正在持续更新。
           </h2>
           <p className="mx-auto mt-6 max-w-2xl font-body text-sm font-light leading-relaxed text-white/60 md:text-base">
-            新的 landing page 作品会继续补充到这里，保持同一套路由和展示结构。
+            新的落地页作品会继续补充到这里，保持同一套路由和展示结构。
           </p>
         </motion.div>
       </section>

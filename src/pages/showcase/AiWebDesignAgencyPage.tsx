@@ -25,31 +25,31 @@ const statsVideo =
 const ctaVideo =
   'https://stream.mux.com/8wrHPCX2dC3msyYU9ObwqNdm00u3ViXvOSHUMRYSEe5Q.m3u8'
 
-const navItems = ['Home', 'Services', 'Work', 'Process', 'Pricing'] as const
+const navItems = ['首页', '服务', '作品', '流程', '定价'] as const
 const navAnchors: Record<(typeof navItems)[number], string> = {
-  Home: '#home',
-  Services: '#services',
-  Work: '#work',
-  Process: '#process',
-  Pricing: '#pricing',
+  首页: '#home',
+  服务: '#services',
+  作品: '#work',
+  流程: '#process',
+  定价: '#pricing',
 }
 
 const partnerNames = ['Stripe', 'Vercel', 'Linear', 'Notion', 'Figma'] as const
 
 const featureRows = [
   {
-    title: 'Designed to convert. Built to perform.',
+    title: '为转化而设计，为性能而构建。',
     description:
-      "Every pixel is intentional. Our AI studies what works across thousands of top sites--then builds yours to outperform them all.",
-    cta: 'Learn more',
+      '每一个像素都经过推敲。我们的 AI 会分析海量顶级网站，再为你构建更高表现的版本。',
+    cta: '了解更多',
     image: feature1Gif,
     reverse: false,
   },
   {
-    title: 'It gets smarter. Automatically.',
+    title: '它会自动变得更聪明。',
     description:
-      'Your site evolves on its own. AI monitors every click, scroll, and conversion--then optimizes in real time. No manual updates. Ever.',
-    cta: 'See how it works',
+      '你的网站会自行进化。AI 监测每次点击、滚动与转化，并实时优化。无需手动更新。',
+    cta: '查看原理',
     image: feature2Gif,
     reverse: true,
   },
@@ -58,55 +58,55 @@ const featureRows = [
 const valueCards = [
   {
     icon: Zap,
-    title: 'Days, Not Months',
+    title: '按天交付，而非按月等待',
     description:
-      "Concept to launch at a pace that redefines fast. Because waiting isn't a strategy.",
+      '从概念到上线，速度重新定义“快”。等待从来不是策略。',
   },
   {
     icon: Palette,
-    title: 'Obsessively Crafted',
+    title: '细节偏执打磨',
     description:
-      'Every detail considered. Every element refined. Design so precise, it feels inevitable.',
+      '每个细节都被反复考量，每个元素都被打磨到位。设计精准到仿佛理所当然。',
   },
   {
     icon: BarChart3,
-    title: 'Built to Convert',
+    title: '为转化而生',
     description:
-      'Layouts informed by data. Decisions backed by performance. Results you can measure.',
+      '布局由数据驱动，决策由表现验证，结果可量化、可复盘。',
   },
   {
     icon: Shield,
-    title: 'Secure by Default',
+    title: '默认即安全',
     description:
-      'Enterprise-grade protection comes standard. SSL, DDoS mitigation, compliance. All included.',
+      '企业级防护默认内置，SSL、DDoS 防护与合规能力全部包含在内。',
   },
 ] as const
 
 const stats = [
-  ['200+', 'Sites launched'],
-  ['98%', 'Client satisfaction'],
-  ['3.2x', 'More conversions'],
-  ['5 days', 'Average delivery'],
+  ['200+', '已上线网站'],
+  ['98%', '客户满意度'],
+  ['3.2x', '转化提升'],
+  ['5 天', '平均交付周期'],
 ] as const
 
 const testimonials = [
   {
     quote:
-      "A complete rebuild in five days. The result outperformed everything we'd spent months building before.",
+      '5 天完成整站重建，效果超过我们此前数月投入的版本。',
     name: 'Sarah Chen',
-    role: 'CEO, Luminary',
+    role: 'Luminary 首席执行官',
   },
   {
     quote:
-      "Conversions up 4x. That's not a typo. The design just works differently when it's built on real data.",
+      '转化提升 4 倍，这不是夸张。基于真实数据构建的设计，结果就是不一样。',
     name: 'Marcus Webb',
-    role: 'Head of Growth, Arcline',
+    role: 'Arcline 增长负责人',
   },
   {
     quote:
-      "They didn't just design our site. They defined our brand. World-class doesn't begin to cover it.",
+      '他们不只是设计了网站，而是定义了品牌。用“世界级”都不足以形容。',
     name: 'Elena Voss',
-    role: 'Brand Director, Helix',
+    role: 'Helix 品牌总监',
   },
 ] as const
 
@@ -114,9 +114,9 @@ function Navbar() {
   return (
     <header className="fixed left-0 right-0 top-4 z-50 px-8 py-3 lg:px-16">
       <nav className="relative mx-auto flex max-w-7xl items-center">
-        <Link aria-label="Back to home" className="block" to="/">
+        <Link aria-label="返回首页" className="block" to="/">
           <img
-            alt="Studio logo"
+            alt="工作室标志"
             className="h-12 w-12 object-contain"
             height={48}
             src={logoIcon}
@@ -138,7 +138,7 @@ function Navbar() {
             className="ml-1 inline-flex items-center gap-1 rounded-full bg-white px-3.5 py-1.5 text-sm font-medium text-black"
             href="#pricing"
           >
-            Get Started
+            立即开始
             <ArrowUpRight className="size-4" />
           </a>
         </div>
@@ -176,10 +176,10 @@ function HeroSection() {
           transition={{ duration: 0.5, ease: smoothEase, delay: 0.15 }}
         >
           <span className="rounded-full bg-white px-3 py-1 text-xs font-semibold text-black font-body">
-            New
+            新功能
           </span>
           <span className="pr-2 text-xs text-white/90 font-body">
-            Introducing AI-powered web design.
+            介绍 AI 驱动网页设计。
           </span>
         </motion.div>
 
@@ -188,7 +188,7 @@ function HeroSection() {
           delay={100}
           direction="bottom"
           splitBy="words"
-          text="The Website Your Brand Deserves"
+          text="给品牌真正配得上的网站"
         />
 
         <motion.p
@@ -197,8 +197,7 @@ function HeroSection() {
           initial={{ filter: 'blur(10px)', opacity: 0, y: 20 }}
           transition={{ duration: 0.6, ease: smoothEase, delay: 0.8 }}
         >
-          Stunning design. Blazing performance. Built by AI, refined by experts.
-          This is web design, wildly reimagined.
+          惊艳设计，极速性能。由 AI 构建，由专家精修。网页设计，从此被重新定义。
         </motion.p>
 
         <motion.div
@@ -211,7 +210,7 @@ function HeroSection() {
             className="liquid-glass-strong inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium text-white font-body"
             href="#pricing"
           >
-            Get Started
+            立即开始
             <ArrowUpRight className="size-4" />
           </a>
           <a
@@ -219,13 +218,13 @@ function HeroSection() {
             href="#process"
           >
             <Play className="size-4 fill-current" />
-            Watch the Film
+            观看短片
           </a>
         </motion.div>
 
         <div className="mt-auto w-full pb-8 pt-16">
           <div className="mx-auto flex w-fit items-center gap-2 rounded-full px-3.5 py-1 text-xs font-medium text-white/85 font-body liquid-glass">
-            Trusted by the teams behind
+            以下团队共同信赖
           </div>
           <div className="mt-8 flex flex-wrap items-center justify-center gap-10 md:gap-16">
             {partnerNames.map((name) => (
@@ -269,19 +268,18 @@ function StartSection() {
         className="relative z-10 mx-auto flex min-h-[500px] max-w-4xl flex-col items-center justify-center text-center"
         id="services"
       >
-        <span className="section-badge">How It Works</span>
+        <span className="section-badge">工作方式</span>
         <h2 className="mt-5 text-4xl md:text-5xl lg:text-6xl font-heading italic tracking-tight leading-[0.9] text-white">
-          You dream it. We ship it.
+          你提出想法，我们负责上线。
         </h2>
         <p className="mt-5 max-w-2xl text-white/60 font-body font-light text-sm md:text-base leading-relaxed">
-          Share your vision. Our AI handles the rest--wireframes, design, code,
-          launch. All in days, not quarters.
+          只需描述你的愿景，AI 会完成线框、设计、代码与上线。周期按天计算，而不是按季度。
         </p>
         <a
           className="mt-9 liquid-glass-strong inline-flex items-center gap-2 rounded-full px-6 py-3 text-sm font-medium text-white font-body"
           href="#pricing"
         >
-          Get Started
+          立即开始
         </a>
       </motion.div>
     </section>
@@ -293,8 +291,8 @@ function FeaturesChess() {
     <section className="bg-black px-6 py-24" id="work">
       <div className="mx-auto max-w-7xl">
         <motion.div {...reveal} className="max-w-3xl">
-          <span className="section-badge">Capabilities</span>
-          <h2 className="mt-5 section-heading">Pro features. Zero complexity.</h2>
+          <span className="section-badge">能力</span>
+          <h2 className="mt-5 section-heading">专业能力，零复杂度。</h2>
         </motion.div>
 
         <div className="mt-16 space-y-10 md:space-y-14">
@@ -337,8 +335,8 @@ function FeaturesGrid() {
     <section className="bg-black px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <motion.div {...reveal} className="max-w-3xl">
-          <span className="section-badge">Why Us</span>
-          <h2 className="mt-5 section-heading">The difference is everything.</h2>
+          <span className="section-badge">为什么选择我们</span>
+          <h2 className="mt-5 section-heading">差异，决定一切。</h2>
         </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
@@ -417,8 +415,8 @@ function Testimonials() {
     <section className="bg-black px-6 py-24">
       <div className="mx-auto max-w-7xl">
         <motion.div {...reveal} className="max-w-3xl">
-          <span className="section-badge">What They Say</span>
-          <h2 className="mt-5 section-heading">Don&apos;t take our word for it.</h2>
+          <span className="section-badge">客户评价</span>
+          <h2 className="mt-5 section-heading">不妨听听他们怎么说。</h2>
         </motion.div>
 
         <div className="mt-12 grid grid-cols-1 gap-6 md:grid-cols-3">
@@ -472,11 +470,10 @@ function CtaFooter() {
         className="relative z-10 mx-auto max-w-7xl text-center"
       >
         <h2 className="mx-auto max-w-5xl text-5xl md:text-6xl lg:text-7xl font-heading italic text-white leading-[0.85] tracking-tight">
-          Your next website starts here.
+          你的下一代网站，从这里开始。
         </h2>
         <p className="mx-auto mt-6 max-w-2xl text-sm md:text-base text-white/65 font-body font-light leading-relaxed">
-          Book a free strategy call. See what AI-powered design can do. No
-          commitment, no pressure. Just possibilities.
+          预约免费策略沟通，看看 AI 驱动设计能带来什么。无需承诺，没有压力，只有可能性。
         </p>
 
         <div className="mt-9 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -484,23 +481,23 @@ function CtaFooter() {
             className="liquid-glass-strong inline-flex items-center rounded-full px-6 py-3 text-sm font-medium text-white font-body"
             href="#"
           >
-            Book a Call
+            预约沟通
           </a>
           <a
             className="inline-flex items-center rounded-full bg-white px-6 py-3 text-sm font-medium text-black font-body"
             href="#"
           >
-            View Pricing
+            查看价格
           </a>
         </div>
 
         <footer className="mt-32 border-t border-white/10 pt-8">
           <div className="flex flex-col items-center justify-between gap-5 md:flex-row">
             <p className="text-xs text-white/40 font-body">
-              (c) 2026 Studio. All rights reserved.
+              © 2026 工作室。保留所有权利。
             </p>
             <div className="flex items-center gap-6">
-              {['Privacy', 'Terms', 'Contact'].map((item) => (
+              {['隐私', '条款', '联系'].map((item) => (
                 <a className="text-xs text-white/40 font-body" href="#" key={item}>
                   {item}
                 </a>

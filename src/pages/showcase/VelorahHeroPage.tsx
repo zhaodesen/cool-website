@@ -20,7 +20,7 @@ const themeVars = {
   '--input': '0 0% 18%',
 } as CSSProperties
 
-const navLinks = ['Studio', 'About', 'Journal', 'Reach Us'] as const
+const navLinks = ['工作室', '关于', '日志', '联系'] as const
 
 export function VelorahHeroPage() {
   return (
@@ -50,7 +50,7 @@ export function VelorahHeroPage() {
 
             <nav className="hidden items-center gap-8 md:flex">
               <a className="text-sm text-foreground transition-colors" href="#">
-                Home
+                首页
               </a>
               {navLinks.map((item) => (
                 <a
@@ -68,7 +68,7 @@ export function VelorahHeroPage() {
               type="button"
               variant="ghost"
             >
-              Begin Journey
+              开启旅程
             </Button>
           </header>
 
@@ -77,14 +77,15 @@ export function VelorahHeroPage() {
               className="animate-fade-rise max-w-7xl text-5xl font-normal leading-[0.95] tracking-[-2.46px] text-foreground sm:text-7xl md:text-8xl"
               style={{ fontFamily: "'Instrument Serif', serif" }}
             >
-              Where <em className="not-italic text-muted-foreground">dreams</em>{' '}
-              rise <em className="not-italic text-muted-foreground">through the silence.</em>
+              在沉静之中，让
+              <em className="not-italic text-muted-foreground">灵感</em>
+              生长，
+              <em className="not-italic text-muted-foreground">让远见</em>
+              落地。
             </h1>
 
             <p className="animate-fade-rise-delay mt-8 max-w-2xl text-base leading-relaxed text-muted-foreground sm:text-lg">
-              We&apos;re designing tools for deep thinkers, bold creators, and
-              quiet rebels. Amid the chaos, we build digital spaces for sharp
-              focus and inspired work.
+              我们为深度思考者、果敢创作者与安静行动派打造工具。于喧嚣之中，构建能专注、能产出的数字空间。
             </p>
 
             <Button
@@ -92,7 +93,7 @@ export function VelorahHeroPage() {
               type="button"
               variant="ghost"
             >
-              Begin Journey
+              开启旅程
             </Button>
           </div>
         </div>

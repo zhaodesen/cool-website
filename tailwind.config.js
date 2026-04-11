@@ -7,10 +7,12 @@ export default {
   theme: {
     extend: {
       fontFamily: {
+        sans: ['Inter', 'sans-serif'],
         heading: ["'Instrument Serif'", 'serif'],
         body: ["'Barlow'", 'sans-serif'],
         grotesk: ["'Anton'", 'sans-serif'],
         condiment: ["'Condiment'", 'cursive'],
+        mondwest: ["'PP Mondwest'", 'serif'],
       },
       colors: {
         cream: '#EFF4FF',
